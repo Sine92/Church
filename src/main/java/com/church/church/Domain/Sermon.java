@@ -1,17 +1,18 @@
 package com.church.church.Domain;
 
-import org.springframework.data.annotation.Id;
+
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.OneToMany;
+import javax.persistence.Id;
+
 
 @Entity
 public class Sermon {
     @Id
+    @Column(name = "SermonID")
     private String sermonId;
-    @Column(name = "Sermon")
-    @OneToMany()
+    @Column(name = "SermonTopic")
     private String sermonTopic;
 
 

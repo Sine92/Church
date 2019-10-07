@@ -1,19 +1,19 @@
 package com.church.church.Domain;
 
-import org.springframework.data.annotation.Id;
+
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.OneToMany;
+import javax.persistence.Id;
 
 
 @Entity
 public class Pastor {
    @Id
-    private String pastorId;
-    @Column(name = "Pastor_Name")
-    @OneToMany()
-    private  String pastorTitle;
+   @Column(name = "Pastor_Name")
+   private String pastorId;
+   @Column(name = "Pastor_Title")
+   private  String pastorTitle;
 
     public String getPastorId() {
         return pastorId;
