@@ -1,6 +1,6 @@
 package com.church.church.Controller;
 
-import com.church.church.Domain.Sermon;
+import com.church.church.Domain.Preaching.Sermon;
 import com.church.church.Service.ImplService.Preaching.SermonServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;

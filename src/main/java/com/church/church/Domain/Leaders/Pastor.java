@@ -1,18 +1,18 @@
-package com.church.church.Domain;
+package com.church.church.Domain.Leaders;
 
 
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 
 @Entity
 public class Pastor {
    @Id
-   @Column(name = "Pastor_Name")
+   //@GeneratedValue(strategy = GenerationType.AUTO)
+   @Column(name = "Pastor",columnDefinition = "VARCHAR(100)",nullable=false)
    private String pastorId;
-   @Column(name = "Pastor_Title")
+
+   @Column(name = "Pastor",nullable=false,insertable = false,updatable = false)
    private  String pastorTitle;
 
     public String getPastorId() {

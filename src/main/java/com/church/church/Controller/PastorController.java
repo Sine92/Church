@@ -1,12 +1,11 @@
 package com.church.church.Controller;
 
-import com.church.church.Domain.Pastor;
+import com.church.church.Domain.Leaders.Pastor;
 import com.church.church.Service.ImplService.Leaders.PastorServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
-import java.awt.*;
 import java.util.List;
 
 @RestController

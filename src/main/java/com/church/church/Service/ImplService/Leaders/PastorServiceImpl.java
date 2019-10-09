@@ -1,6 +1,6 @@
 package com.church.church.Service.ImplService.Leaders;
 
-import com.church.church.Domain.Pastor;
+import com.church.church.Domain.Leaders.Pastor;
 import com.church.church.Repository.PastorRepo;
 import com.church.church.Service.ImplService.PastorService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.Set;
 
 @Service
 public class PastorServiceImpl implements PastorService {

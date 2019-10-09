@@ -1,6 +1,6 @@
 package com.church.church.Service.ImplService.Preaching;
 
-import com.church.church.Domain.Sermon;
+import com.church.church.Domain.Preaching.Sermon;
 import com.church.church.Repository.SermoRepo;
 import com.church.church.Service.ImplService.SermonService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.Set;
 
 @Service
 public class SermonServiceImpl implements SermonService {

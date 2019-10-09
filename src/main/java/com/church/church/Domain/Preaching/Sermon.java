@@ -1,18 +1,18 @@
-package com.church.church.Domain;
+package com.church.church.Domain.Preaching;
 
 
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 
 @Entity
 public class Sermon {
     @Id
-    @Column(name = "SermonID")
+    //@GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "SermonID",columnDefinition = "VARCHAR(100)",nullable=false)
     private String sermonId;
-    @Column(name = "SermonTopic")
+
+    @Column(name = "SermonTopic",nullable=false,insertable = false,updatable = false)
     private String sermonTopic;
 
 

@@ -33,8 +33,10 @@ public class ChurchSecurity extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception{
         http.authorizeRequests()
                 .antMatchers(HttpMethod.POST,"/church/**/create").hasRole(ADMIN_ROLE)
-                .antMatchers(HttpMethod.GET,"/church/**/read").hasAnyRole(ADMIN_ROLE)
+                .antMatchers(HttpMethod.GET,"/church/**/read").hasAnyRole(ADMIN_ROLE,USER_ROLE)
                 .antMatchers(HttpMethod.PUT,"/church/**/update").hasRole(ADMIN_ROLE)
+                .antMatchers(HttpMethod.DELETE,"/church/**/delete").hasRole(ADMIN_ROLE)
+                .antMatchers(HttpMethod.GET,"/church/**/getall").hasRole(USER_ROLE)
                 .antMatchers("/church/hello").hasRole(USER_ROLE)
                 .antMatchers("/")
                 .permitAll().and().formLogin();

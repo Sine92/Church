@@ -3,7 +3,7 @@ package com.church.church.Util;
 import java.util.UUID;
 
 public class Helper {
-    public static String generateId(){
+    public static String  generateId(){
         return UUID.randomUUID().toString();
     }
 }
