@@ -8,11 +8,18 @@ import javax.persistence.*;
 @Entity
 public class Sermon {
     @Id
-    //@GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "SermonID",columnDefinition = "VARCHAR(100)",nullable=false)
-    private String sermonId;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "SermonID")
+    private Integer sermonId;
 
-    @Column(name = "SermonTopic",nullable=false,insertable = false,updatable = false)
+    public void setSermonId(Integer sermonId) {
+        this.sermonId = sermonId;
+    }
+
+    public void setSermonTopic(String sermonTopic) {
+        this.sermonTopic = sermonTopic;
+    }
+
     private String sermonTopic;
 
 
@@ -22,7 +29,7 @@ public class Sermon {
         this.sermonTopic = build.sermonTopic;
     }
 
-    public String getSermonId() {
+    public Integer getSermonId() {
         return sermonId;
     }
 
@@ -32,10 +39,10 @@ public class Sermon {
 
 
     public static class Builder {
-        private String sermonId;
+        private Integer sermonId;
         private String sermonTopic;
 
-        public Builder sermonId(String sermonId)
+        public Builder sermonId(Integer sermonId)
         {
             this.sermonId = sermonId;
             return this;

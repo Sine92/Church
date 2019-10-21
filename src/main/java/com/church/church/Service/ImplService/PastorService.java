@@ -5,7 +5,7 @@ import com.church.church.Service.IService;
 
 import java.util.List;
 
-public interface PastorService extends IService<Pastor, String> {
+public interface PastorService extends IService<Pastor, Integer> {
 
     Pastor displayBy(String pastorTitle);
 

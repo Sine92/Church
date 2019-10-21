@@ -46,19 +46,26 @@ public class SermonServiceImpl implements SermonService {
     }
 
     @Override
-    public Sermon read(String s) {
+    public Sermon read(Integer s) {
         Optional<Sermon> sermonOptional =this.sermoRepo.findById(s);
         return sermonOptional.orElse(null);
     }
 
     @Override
     public Sermon update(Sermon sermon) {
-        return this.sermoRepo.save(sermon);
+        Sermon toUpdate = read(sermon.getSermonId());
+        if(toUpdate != null) {
+            toUpdate.setSermonId(sermon.getSermonId());
+            toUpdate.setSermonTopic(sermon.getSermonTopic());
+
+        }
+            return this.sermoRepo.save(toUpdate);
+
 
     }
 
     @Override
-    public void delete(String s) {
+    public void delete(Integer s) {
         this.sermoRepo.deleteById(s);
 
     }

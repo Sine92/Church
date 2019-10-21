@@ -1,6 +1,7 @@
 package com.church.church.Controller;
 
 import com.church.church.Domain.Leaders.Pastor;
+import com.church.church.Factory.PastorFactory;
 import com.church.church.Service.ImplService.Leaders.PastorServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -15,13 +16,16 @@ public class PastorController {
     @Autowired
     PastorServiceImpl pastorService;
 
-    @PostMapping(value = "/create",consumes = MediaType.APPLICATION_JSON_VALUE)
-    public Pastor create(@RequestBody Pastor pastor){
-        return pastorService.create(pastor);
+    @PostMapping(value = "/create/{pastorTitle}")
+    public @ResponseBody Pastor create(@PathVariable String pastorTitle){
+        return pastorService.create(PastorFactory.buildPastor(pastorTitle));
     }
 
-    @GetMapping(value="/read")
-    public Pastor read(@PathVariable String pastorId){
+    @GetMapping(value="/read/{pastorId}")
+    public Pastor read(@PathVariable Integer pastorId){
+
+
+
         return this.pastorService.read(pastorId);
     }
 
@@ -30,8 +34,8 @@ public class PastorController {
     {
         return this.pastorService.update(pastor);
     }
-    @DeleteMapping(value = "/delete")
-     public void delete(@PathVariable String pastorId)
+    @DeleteMapping(value = "/delete/{pastorId}")
+     public void delete(@PathVariable Integer pastorId)
     {
         this.pastorService.delete(pastorId);
     }

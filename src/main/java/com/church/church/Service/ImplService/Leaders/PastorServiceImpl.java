@@ -53,18 +53,24 @@ public class PastorServiceImpl implements PastorService {
     }
 
     @Override
-    public Pastor read(String s) {
+    public Pastor read(Integer s) {
         Optional<Pastor> pastorOptional = this.pastorRepo.findById(s);
         return pastorOptional.orElse(null);
     }
 
     @Override
     public Pastor update(Pastor pastor) {
-        return this.pastorRepo.save(pastor);
+
+        Pastor toUdpate = read(pastor.getPastorId());
+        if(toUdpate!= null){
+            toUdpate.setPastorId(pastor.getPastorId());
+            toUdpate.setPastorTitle(pastor.getPastorTitle());
+        }
+        return this.pastorRepo.save(toUdpate);
     }
 
     @Override
-    public void delete(String s) {
+    public void delete(Integer s) {
 
         this.pastorRepo.deleteById(s);
 

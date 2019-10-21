@@ -5,7 +5,7 @@ import com.church.church.Service.IService;
 
 import java.util.List;
 
-public interface SermonService extends IService<Sermon, String> {
+public interface SermonService extends IService<Sermon, Integer> {
 
     Sermon displayBy(String sermonTopic);
 
